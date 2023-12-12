@@ -111,6 +111,8 @@ int main(int argc, char* argv[]) {
     }
 
     std::ifstream file(argv[1]);
+
+    //проверка успешности чтения файла
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << argv[1] << "\n";
         return 1;
@@ -120,6 +122,7 @@ int main(int argc, char* argv[]) {
 
     ErrorInfo errorInfo;
 
+    //вывод о проверки кода
     if (checkBrackets(code, errorInfo) && checkSemicolons(code, errorInfo)) {
         std::cout << "Code analysis passed successfully.\n";
     } else {
